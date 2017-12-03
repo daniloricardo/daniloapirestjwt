@@ -19,6 +19,7 @@ public class ClientController {
     @Autowired
     DatabaseService databaseService;
 
+    @CrossOrigin(origins = "*", maxAge = 3600)
     @RequestMapping(value="/client",method = {RequestMethod.OPTIONS,RequestMethod.GET})
     @ResponseBody
     public List<CustomerModel> get(){
