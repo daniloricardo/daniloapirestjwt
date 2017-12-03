@@ -4,6 +4,8 @@ import com.example.demo.DatabaseService;
 import com.example.demo.model.CustomerModel;
 import com.example.demo.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,6 +32,14 @@ public class ClientController {
     @GetMapping("create")
     @ResponseBody public void create(){
         databaseService.create();
+    }
+
+    @RequestMapping(
+            value = "/**",
+            method = RequestMethod.OPTIONS
+    )
+    public ResponseEntity handle() {
+        return new ResponseEntity(HttpStatus.OK);
     }
 
 }
