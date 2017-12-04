@@ -19,6 +19,7 @@ public class TokenAuthenticationService {
     static final String HEADER_STRING = "Authorization";
 
 
+
     static void addAuthentication(HttpServletResponse response,String username) throws IOException {
 
         String JWT = Jwts.builder()
@@ -27,7 +28,8 @@ public class TokenAuthenticationService {
                 .signWith(SignatureAlgorithm.HS512,SECRET)
                 .compact();
         response.addHeader(HEADER_STRING,TOKEN_PREFIX+ " "+ JWT);
-        response.getWriter().write(JWT);
+        response.addHeader("Access-Control-Allow-Origin", "*");
+        response.getWriter().write(TOKEN_PREFIX+ " "+ JWT);
 
     }
 

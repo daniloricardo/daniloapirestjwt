@@ -34,12 +34,5 @@ public class ClientController {
         databaseService.create();
     }
 
-    @RequestMapping(
-            value = "/**",
-            method = RequestMethod.OPTIONS
-    )
-    public ResponseEntity handle() {
-        return new ResponseEntity(HttpStatus.OK);
-    }
 
 }
