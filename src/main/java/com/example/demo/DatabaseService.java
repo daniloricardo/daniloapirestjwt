@@ -49,6 +49,19 @@ public class DatabaseService {
 
         addressRepository.save(addressModel2);
 
+
+        AddressModel addressModel3 = new AddressModel();
+        addressModel3.setCep("02541-070");
+        addressModel3.setLogradouro("Rua Oscar de Moura Lacerda");
+        addressModel3.setNumero("306");
+        addressModel3.setComplemento("Casa 1");
+        addressModel3.setBairro("Imirim");
+        addressModel3.setCidade("São Paulo");
+
+
+        addressRepository.save(addressModel3);
+
+
         CustomerModel customerModel2 = new CustomerModel();
         customerModel2.setCpf("899.124.789-25");
         customerModel2.setDateRegister(new Date());
@@ -56,8 +69,18 @@ public class DatabaseService {
         customerModel2.setAddresses(Arrays.asList(addressModel2));
 
 
+
+        CustomerModel customerModel3 = new CustomerModel();
+        customerModel3.setCpf("419.124.521-85");
+        customerModel3.setDateRegister(new Date());
+        customerModel3.setName("Elza Rodrigues de Moraes Silva");
+        customerModel3.setAddresses(Arrays.asList(addressModel3));
+
+
+
         customerRepository.save(customerModel);
         customerRepository.save(customerModel2);
+        customerRepository.save(customerModel3);
 
 
     }
