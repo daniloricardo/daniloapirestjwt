@@ -58,8 +58,18 @@ public class DatabaseService {
         addressModel3.setBairro("Imirim");
         addressModel3.setCidade("São Paulo");
 
+        AddressModel addressModel4 = new AddressModel();
+        addressModel4.setCep("02541-070");
+        addressModel4.setLogradouro("Rua Oscar de Moura Lacerda");
+        addressModel4.setNumero("306");
+        addressModel4.setComplemento("Casa 1");
+        addressModel4.setBairro("Imirim");
+        addressModel4.setCidade("São Paulo");
+
 
         addressRepository.save(addressModel3);
+
+        addressRepository.save(addressModel4);
 
 
         CustomerModel customerModel2 = new CustomerModel();
@@ -80,7 +90,7 @@ public class DatabaseService {
         customerModel4.setCpf("545.888.521-85");
         customerModel4.setDateRegister(new Date());
         customerModel4.setName("Cicero Galdino da Silva");
-        customerModel4.setAddresses(Arrays.asList(addressModel3));
+        customerModel4.setAddresses(Arrays.asList(addressModel4));
 
 
 
