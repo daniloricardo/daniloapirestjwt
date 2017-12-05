@@ -76,11 +76,18 @@ public class DatabaseService {
         customerModel3.setName("Elza Rodrigues de Moraes Silva");
         customerModel3.setAddresses(Arrays.asList(addressModel3));
 
+        CustomerModel customerModel4 = new CustomerModel();
+        customerModel4.setCpf("545.888.521-85");
+        customerModel4.setDateRegister(new Date());
+        customerModel4.setName("Cicero Galdino da Silva");
+        customerModel4.setAddresses(Arrays.asList(addressModel3));
+
 
 
         customerRepository.save(customerModel);
         customerRepository.save(customerModel2);
         customerRepository.save(customerModel3);
+        customerRepository.save(customerModel4);
 
 
     }
